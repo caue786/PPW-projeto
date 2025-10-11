@@ -1,0 +1,99 @@
+<!-- ----------------------------- -->
+<!--  ARQUIVO: Pagina-inicial.html -->
+<!-- ----------------------------- -->
+
+<!DOCTYPE html>
+<!-- Define que o documento segue o padrão HTML5 -->
+<html lang="pt-br">
+<!-- Define o idioma da página como português do Brasil -->
+
+<head>
+    <!-- Define a codificação de caracteres (acentos e símbolos) -->
+    <meta charset="utf-8" />
+
+    <!-- Importa o arquivo CSS externo para aplicar os estilos -->
+    <link rel="stylesheet" href="css/EstiloSite.css">
+   <link rel="stylesheet" href="css/estiloIndex">
+</head>
+
+<body>
+    <!-- Corpo da página, onde o conteúdo visível é exibido -->
+
+    <main>
+        <!-- Área principal do site -->
+
+        <header>
+            <!-- Cabeçalho da página -->
+
+            <!-- Título principal, identificado por id="titulo" -->
+            <h2 id="titulo">Comércio eletrônico IFG</h2>
+
+            <!-- Parágrafo contendo a imagem e uma linha horizontal -->
+            <p>
+                <!-- Insere a imagem do Instituto Federal -->
+                <img src="img/InstitutoFederalTransparente2.png" alt="Logo IFG">
+
+                <!-- Cria uma linha horizontal de separação -->
+                <hr>
+            </p>
+        </header>
+
+        <!-- Define a seção de navegação -->
+        <font>
+            <!-- OBS: A tag <font> é obsoleta e não recomendada em HTML5 -->
+            <nav style="color: rgb(255, 255, 255);">
+                <!-- Menu de navegação com links para outras páginas -->
+
+                <!-- Link para a página inicial (abre em nova guia) -->
+                <a href="PaginaInicial.html" target="_blank">Página inicial</a> |
+
+                <!-- Link para a página de produtos -->
+                <a href="#">Produtos</a> |
+
+                <!-- Link para a página de contato -->
+                <a href="#">Contato</a> |
+
+                <!-- Link para a página do carrinho -->
+                <a href="#">Carrinho</a>
+            </nav>
+        </font>
+
+        <!-- Título de boas-vindas com id próprio -->
+        <h2 id="boasvindas">
+            Bem-vindo ao Comércio eletrônico IFG,
+            desenvolvido na disciplina de Programação para Web
+        </h2>
+
+        <!-- Quebra de linha -->
+        <br>
+
+        <!-- Bloco de texto com link para Produtos -->
+        <h3>
+            <p style="text-align: justify;">
+                Para acessar a página de produtos, clique no link abaixo<br>
+                <a href="#">Produtos</a>
+                <br>
+            </p>
+        </h3>
+
+        <!-- Bloco de texto com link para Contato -->
+        <h3>
+            <p>
+                Para acessar a página de contato, clique no link abaixo<br>
+                <a href="#">Contato</a>
+                <br>
+            </p>
+        </h3>
+
+        <!-- Bloco de texto com link para Carrinho -->
+        <h3>
+            <p>
+                Para acessar a página de carrinho, clique no link abaixo<br>
+                <a href="#">Carrinho</a>
+            </p>
+        </h3>
+
+    </main>
+
+</body>
+</html>

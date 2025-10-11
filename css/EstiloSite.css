@@ -1,0 +1,63 @@
+/* ------------------------ */
+/*  ARQUIVO: estilo.css      */
+/* ------------------------ */
+
+/* Define a codificação de caracteres usada no CSS */
+@charset "utf-8";
+
+/* Estilo aplicado ao corpo da página */
+body {
+    /* Cria um fundo com gradiente indo da direita para a esquerda */
+    background-image: linear-gradient(to left, #f1d8c9, #f2c3a7);
+
+    /* Define a família de fontes usada na página */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilo da área principal do conteúdo */
+main {
+    /* Define cor de fundo branca */
+    background-color: white;
+
+    /* Arredonda os cantos do bloco */
+    border-radius: 20px;
+
+    /* Adiciona uma sombra para dar destaque */
+    box-shadow: 5px 5px 15px #a98976;
+
+    /* Define a largura fixa do bloco principal */
+    width: 600px;
+
+    /* Adiciona espaço interno */
+    padding: 10px;
+
+    /* Centraliza o bloco na tela */
+    margin: auto;
+}
+
+/* Define a cor dos títulos <h3> */
+h3 {
+    color: #f39209;
+}
+
+/* Estilo específico para o título principal (id="titulo") */
+h2#titulo {
+    color: #125189;              /* Cor azul escuro */
+    text-align: center;          /* Centraliza o texto */
+    text-shadow: 1px 1px 2px black; /* Adiciona sombra no texto */
+}
+
+/* Estilo para o título de boas-vindas (id="boasvindas") */
+h2#boasvindas {
+    color: #125189; /* Azul escuro */
+}
+
+/* Estilo para todos os links <a> */
+a {
+    color: rgb(0, 0, 0); /* Cor preta */
+}
+
+/* Estilo dos parágrafos <p> */
+p {
+    text-align: justify; /* Alinha o texto dos dois lados */
+}
