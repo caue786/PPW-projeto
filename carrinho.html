@@ -10,12 +10,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+    <style>
+        .botoescarrinho{
+        
+            background-color: rgb(50, 49, 49);
+            color: whitesmoke;
+            border-radius: 10px;
+            font-size: 15px;
+            width: auto;
+            padding: 9px 15px;
+            margin: 3px;
+        }
+
+        .fraseH1{
+            width: auto;
+            height: auto;
+            float: left;
+            margin-left: 20px;
+        }
+    </style>
+
 </head>
 
 <body>
     <h4>Comércio Eletrônico - Carrinho</h4>
     <header>
-        <h1>Meu Carrinho de Compras</h1>
+        <h1 class="fraseH1">Meu Carrinho de Compras</h1>
         <img src="imagens/symbole-charrette-noire.png" alt="botao carrinho" class="carrinho">
 
     </header>
@@ -24,27 +44,34 @@
 
         <div class="cardCarrinho cardImagens">
             <img src="imagens/smarttv4K.jpg" alt="smarttv4K">
-            <h6>Preço: R$2.000</h6>
-            <h6>Quantidade: 2</h6>
-            <img src="imagens/smarttv4K.jpg" alt="smarttv4K">
-            <h6>Preço: R$2.000</h6>
-            <h6>Quantidade: 2</h6>
+            <h6>Preço: 2.448,01</h6>
+            <h6>Quantidade: 1</h6>
+            <img src="imagens/smartTV40.jpg" alt="smartTV40">
+            <h6>Preço: 1.199,99</h6>
+            <h6>Quantidade: 1</h6>
             
         </div>
 
         <div class="cardCarrinho cardDescricao">
-            <p>Smart TV 4K 40" Philco FHD Smart PTV40 Roku TV LED Full HD Processador Quad-Core Dolby Audio Wi-Fi Integrado Netflix YouTube HDMI USB Bivolt</p>
-            <p style="margin-top: 202px;">Smart TV 4K 40" Philco FHD Smart PTV40 Roku TV LED Full HD Processador Quad-Core Dolby Audio Wi-Fi Integrado Netflix YouTube HDMI USB Bivolt</p>
+            <p>55" LG UHD 55UA85 Processador α7 AI Ger8 4K Super Upscaling Google Cast Alexa Integrado Controle AI Smart Magic WebOS 25</p>
+            <p style="margin-top: 225px;">Smart TV 4K 40" Philco FHD Smart PTV40 Roku TV LED Full HD Processador Quad-Core Dolby Audio Wi-Fi Integrado Netflix YouTube HDMI USB Bivolt</p>
         </div>
 
         <div class="cardCarrinho cardResumo">
             <h3>RESUMO DO PEDIDO :</h3>
             <ul>
-                <li>Smart TV 4K 40" Philco FHD Smart (Qtd. 2)</li>
+                <li>Smart TV 4K 55" LG UHD 55UA85 Processador α7 (Qtd. 1)</li>
                 <li>Smart TV 4K 40" Philco FHD Smart (Qtd. 1)</li>
             </ul>
-            <p><u>Total (3 Produtos) = R$5.000 </u></p>
-
+            <p style="margin-bottom: 30px;"> <u>Total (2 Produtos) = R$3.648 </u> Divida em até 10x sem juros 10x de R$364,80 </p>
+            <p><u>Entregar em:</u>
+            <i>Mountain View 1600 Amphitheatre Parkway Mountain View, CA 94043 United States</i>
+            </p>
+            
+            <div class="cardCarrinho cardBotoes">
+                <a href="produtos.html"><button class="botoescarrinho">Retornar à lista de Produtos</button></a>
+                <a href="sucesso-pedido.html"><button class="botoescarrinho">Finalizar a compra</button></a>
+            </div>
         </div>
     </div>
 

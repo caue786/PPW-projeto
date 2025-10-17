@@ -3,13 +3,8 @@ img{
     height: 100px;
 
 }
-div12{
-    background-color: rgb(26, 163, 117);
-    text-align: center;
-    display: inline-block;
 
 
-}
 div:hover12{
     background-color: rgb(11, 166, 26);
     color:rgb(57, 2, 2);
@@ -30,19 +25,6 @@ p{
 
 
 
-
-
-table{
-    width: 650px;
-    height: auto;
-}
-td{
-    border: 1px solid black;
-    padding: 8px;
-    text-align: center;
-    vertical-align: middle;
-}
-
 .logo{
     width: 90px;
     height: auto;
@@ -56,36 +38,29 @@ h4{
     background-image: linear-gradient(to left, #f1d8c9, #f2c3a7);
 
 }
-h5{
-    text-align: left;
-    
-}
+
 .carrinho{
     width: 40px;
     height: auto;
     float: right;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
-divBusca{
-    background-color: rgb(194, 218, 191);
-    border: solid 1px;
-    border-radius: 20px;
-    width: 180px;
-    text-align: center;
-    justify-content: center;
-    
-    
-}
-txtBusca{
-    float: left;
-    background-color: transparent;
-    padding-left: 5px;
+
+#txtBusca{
+
+    background-color:aliceblue;
     font-style: italic;
-    font-size: 15px;
-    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
     height: 32px;
-    width: 260px;
+    border: solid 1px;
+    border-radius: 10px;
+    width: 200px;
+    margin-top: 5px;
+
+
+    
 }
 
 header{
@@ -148,7 +123,7 @@ header{
     justify-content: center;
     margin-top: 25px;
     min-height: auto;
-
+    background-color: #d9ab8f;
 }
 
 .cardCarrinho{
@@ -157,7 +132,7 @@ header{
     color: rgb(20, 20, 20);
     text-align: center;
     width: 450px;
-    height: 525px;
+    height: 560px;
     
 }
 .cardCarrinho>img{
@@ -179,18 +154,27 @@ header{
     margin-right: 200px;
   
 }
-.cardCarrinho>cardResumo{
-    background-color: aquamarine;
-}
 
 .cardResumo>ul>li{
-    color: blueviolet;
+    color: rgb(156, 5, 5);
     text-align: left;
     margin-top: 15px;
 }
 .cardResumo>h3{
-    color: blue;
+    
     text-align: left;
     margin-top: 52px;
 
+}
+.cardResumo>u,address{
+   
+    text-align: left;
+    margin-top: 200px;
+}
+.cardBotoes{
+    height: auto;
+    margin-top: 320px;
+    display: flex;
+    justify-content: left;
+    
 }
