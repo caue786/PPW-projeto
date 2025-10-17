@@ -1,0 +1,102 @@
+img{
+    width: 200px;
+    height: 100px;
+
+}
+div{
+    background-color: rgb(26, 163, 117);
+    text-align: center;
+    display: inline-block;
+
+
+}
+div:hover{
+    background-color: rgb(11, 166, 125);
+    color:rgb(57, 2, 2);
+}
+
+divBusca{
+    background-color: rgb(194, 218, 191);
+    border: solid 1px;
+    border-radius: 20px;
+    width: 180px;
+    text-align: center;
+    justify-content: center;
+    
+    
+}
+txtBusca{
+    float: left;
+    background-color: transparent;
+    padding-left: 5px;
+    font-style: italic;
+    font-size: 15px;
+    border: none;
+    height: 32px;
+    width: 260px;
+}
+p{
+    float: left;
+    background-color: transparent;
+    padding-left: 5px;
+   
+    font-size: 18px;
+    border: none;
+    height: 32px;
+    width: 260px;
+}
+
+
+
+
+
+
+table{
+    width: 650px;
+    height: auto;
+}
+td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.logo{
+    width: 90px;
+    height: auto;
+    float: left;
+    
+ 
+}
+h4{
+    text-align: left;
+    margin: 0;
+    background-color: aquamarine;
+
+}
+h5{
+    text-align: left;
+    
+}
+.carrinho{
+    width: 40px;
+    height: auto;
+    float: right;
+    margin-right: 20px;
+}
+
+header{
+    background-color: aquamarine;
+    min-height: 130px;
+    padding-top: 30px;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.main{
+
+}
