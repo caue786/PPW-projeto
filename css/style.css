@@ -123,7 +123,6 @@ header{
     justify-content: center;
     margin-top: 25px;
     min-height: auto;
-    background-color: #d9ab8f;
 }
 
 .cardCarrinho{
@@ -177,4 +176,53 @@ header{
     display: flex;
     justify-content: left;
     
+}
+
+/*Abaixo: CSS da paginha sucesso-pedido */
+
+.popUp{
+    background-color: whitesmoke;
+    justify-content: center;
+    width: 580px;
+    height: 550px;
+    border-radius: 12px;
+    display: flex;
+    margin-top: 65px;
+    margin-left: 500px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+   
+}
+.popUp>h2{
+    margin-top: 55px;
+    font-size: 30px;
+
+    
+    
+}
+.popUpINFO{
+    background-color: rgb(238, 239, 241);
+    justify-content: center;
+    width: 390px;
+    height: 300px;
+    border-radius: 12px;
+    display: flex;
+    margin-top: 160px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    position: absolute;
+}
+
+.popUpINFO>h3{
+    text-align: center;
+    margin-top: 45px;
+    position: absolute;
+}
+.popUpINFO>h5{
+    margin-top: 150px;
+    font-size: 16px ;
+    text-align: center;
+    position: absolute;
+}
+.btnPaginaFinalizar{
+    margin-top: 240px;
 }
