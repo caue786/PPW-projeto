@@ -12,52 +12,55 @@ body {
 
     /* Define a família de fontes usada na página */
     font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    justify-content: center;
+    /* Centraliza na horizontal */
+    align-items: center;
+    /* Centraliza na vertical */
+    height: 100vh;
+    /* Faz o corpo ocupar a tela toda */
+    margin: auto;
+    /* Remove espaçamento padrão */
+    font-family: "Poppins", sans-serif;
 }
 
 /* Estilo da área principal do conteúdo */
 main {
     /* Define cor de fundo branca */
     background-color: white;
-
     /* Arredonda os cantos do bloco */
     border-radius: 20px;
-
     /* Adiciona uma sombra para dar destaque */
     box-shadow: 5px 5px 15px #a98976;
-
     /* Define a largura fixa do bloco principal */
-    width: 600px;
-
+    width: 1000px;
     /* Adiciona espaço interno */
     padding: 10px;
-
     /* Centraliza o bloco na tela */
     margin: auto;
+    
+    margin-top: 30px;
 }
+
+
 
 /* Define a cor dos títulos <h3> */
 h3 {
-    color: #f39209;
+    color: #ea9462;
 }
 
-/* Estilo específico para o título principal (id="titulo") */
-h2#titulo {
-    color: #125189;              /* Cor azul escuro */
-    text-align: center;          /* Centraliza o texto */
-    text-shadow: 1px 1px 2px black; /* Adiciona sombra no texto */
-}
 
-/* Estilo para o título de boas-vindas (id="boasvindas") */
-h2#boasvindas {
-    color: #125189; /* Azul escuro */
-}
+
+
 
 /* Estilo para todos os links <a> */
 a {
-    color: rgb(0, 0, 0); /* Cor preta */
+    color: rgb(0, 0, 0);
+    /* Cor preta */
 }
 
 /* Estilo dos parágrafos <p> */
 p {
-    text-align: justify; /* Alinha o texto dos dois lados */
+    text-align: justify;
+    /* Alinha o texto dos dois lados */
 }

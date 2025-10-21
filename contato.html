@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Define o conjunto de caracteres da página (permite acentos e símbolos) -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faz a página se adaptar a diferentes tamanhos de tela (responsividade) -->
+
+    <title>Contato</title>
+    <!-- Título que aparece na aba do navegador -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Importa um arquivo CSS externo (estilos adicionais) -->
+
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <!-- Define o ícone que aparece na aba do navegador -->
+
+    <!-- Conexões antecipadas para otimizar o carregamento da fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Importa a fonte "Poppins" do Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos da página -->
+    <style>
+        /* Estilo aplicado ao corpo da página */
+        body {
+            /* Cor de fundo branca */
+            background-color: #fff;
+
+            /* Centraliza o conteúdo */
+            justify-content: center;
+            align-items: center;
+
+            /* Faz o corpo ocupar 100% da altura da tela */
+            height: 100vh;
+
+            /* Remove margens padrão */
+            margin: auto;
+
+            /* Define a fonte principal */
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* Área principal da página */
+        main {
+            display: flex;
+            justify-content: center;
+            /* Centraliza horizontalmente */
+            align-items: flex-start;
+            /* Alinha o conteúdo no topo */
+            height: 100vh;
+            padding-top: 120px;
+            /* Cria espaço para o cabeçalho fixo */
+            box-sizing: border-box;
+        }
+
+        /* Card (caixa) que contém o formulário */
+        .cardContato {
+            background-color: rgb(247, 245, 245);
+            /* Fundo cinza claro */
+            color: rgb(20, 20, 20);
+            /* Cor do texto */
+            text-align: center;
+            width: 380px;
+            height: 500px;
+            box-shadow: 5px 5px 15px #a98976;
+            /* Sombra para dar profundidade */
+            border-radius: 10px;
+            /* Bordas arredondadas */
+            padding: 20px;
+            /* Espaçamento interno */
+            text-align: justify;
+            /* Justifica o texto */
+        }
+
+        /* Grupo de campos (rótulo + input) */
+        .form-group {
+            width: 100%;
+            margin-bottom: 15px;
+            /* Espaçamento entre os campos */
+            display: flex;
+            flex-direction: column;
+            /* Organiza os elementos na vertical */
+        }
+
+        /* Estilo dos rótulos (labels) */
+        .form-group label {
+            font-weight: bold;
+            /* Deixa em negrito */
+            margin-bottom: 5px;
+            /* Pequeno espaçamento abaixo */
+        }
+
+        /* Campos de entrada e seleção */
+        .form-group input,
+        .form-group select {
+            padding: 8px;
+            /* Espaçamento interno */
+            border: 1px solid #ccc;
+            /* Borda cinza */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            width: 100%;
+            /* Ocupa toda a largura disponível */
+            box-sizing: border-box;
+        }
+
+        /* Reset básico para todos os elementos */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* Botão de envio */
+        input[type="submit"] {
+            width: 100%;
+            /* Ocupa toda a largura do card */
+            padding: 10px;
+            /* Espaçamento interno */
+            background-color: #ff9355;
+            /* Cor de fundo laranja */
+            color: #fff;
+            /* Texto branco */
+            border: none;
+            /* Remove borda padrão */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            cursor: pointer;
+            /* Muda o cursor para “mão” */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <img src="imagens/logoifgpng.png" alt="logo" class="logo">
+        <!-- Logotipo da instituição -->
+
+        <h5>Olá seja bem vindo!</h5>
+        <!-- Saudação ao visitante -->
+
+        <h1>Formulário de contato</h1>
+        <!-- Título principal da página -->
+
+        <a href="PaginaInicial.html">Voltar para a página inicial</a>
+        <!-- Link para retornar à página inicial -->
+    </header>
+
+    <!-- Área principal do conteúdo -->
+    <main>
+        <!-- Card contendo o formulário -->
+        <div class="cardContato">
+
+            <!-- Início do formulário -->
+            <form action="sucessoContato.html" method="get">
+                <!-- O atributo action define a página para onde os dados serão enviados -->
+                <!-- O método GET envia as informações pela URL -->
+
+                <!-- Campo de nome -->
+                <div class="form-group">
+                    <h2>
+                        <label for="inome">Nome:</label>
+                        <input type="text" name="nome" id="inome" required>
+                        <!-- Campo obrigatório (required) -->
+                    </h2>
+                </div>
+
+                <!-- Campo de e-mail -->
+                <div class="form-group">
+                    <h2>
+                        <label for="iemail">Email:</label>
+                        <input type="email" name="email" id="iemail" required>
+                        <!-- Campo que exige um formato de e-mail válido -->
+                    </h2>
+                </div>
+
+                <!-- Campo de telefone -->
+                <div class="form-group">
+                    <h2>
+                        <label for="itel">Número de telefone</label>
+                        <input type="tel" name="telefone" id="itel" placeholder="(xx) xxxx-xxxx"
+                            pattern="\(\d{2}\) \d{4}-\d{4}">
+                        <!-- Campo com formato específico (regex pattern) -->
+                    </h2>
+                </div>
+
+                <!-- Campo de assunto -->
+                <div class="form-group">
+                    <h2>
+                        <label for="iassunto">Assunto:</label>
+                        <select name="assunto" id="iassunto">
+                            <option value="Devolução">Devolução</option>
+                            <option value="Duvida">Dúvida</option>
+                            <option value="Sugestão">Sugestão</option>
+                        </select>
+                    </h2>
+                </div>
+
+                <!-- Campo de mensagem -->
+                <div class="form-group">
+                    <h2>
+                        <label for="imsg">Mensagem:</label>
+                        <input type="text" name="mensagem" id="imsg">
+                        <!-- Campo de texto simples (poderia ser um textarea para mensagens longas) -->
+                    </h2>
+                </div>
+
+                <!-- Botão de envio -->
+                <div class="form-group">
+                    <center>
+                        <input type="submit" value="Enviar">
+                        <!-- Envia o formulário para a página de sucesso -->
+                    </center>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

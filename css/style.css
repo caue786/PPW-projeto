@@ -10,6 +10,10 @@ div:hover12{
     color:rgb(57, 2, 2);
 }
 
+a {
+    color: rgb(0, 0, 0);
+    /* Cor preta */
+}
 
 p{
     float: left;
@@ -124,7 +128,19 @@ header{
     margin-top: 25px;
     min-height: auto;
 }
-
+.cardFormulario{
+     margin: 0px;
+    background-color: rgb(247, 245, 245);
+    color: rgb(20, 20, 20);
+    text-align: center;
+    width: 450px;
+    height: 560px;
+}
+.cardFormulario>p{
+ margin-top: 55px;
+    text-align: justify;
+    font-size: 18px;
+}
 .cardCarrinho{
     margin: 0px;
     background-color: rgb(247, 245, 245);

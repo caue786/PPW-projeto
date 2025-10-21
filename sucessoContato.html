@@ -1,0 +1,69 @@
+<!DOCTYPE html> <!-- Define o tipo do documento como HTML5 -->
+<html lang="en"> <!-- Informa que o idioma da página é inglês (poderia ser "pt-BR" se quiser em português) -->
+
+<head>
+    <!-- Importa o arquivo de estilo externo -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Define o título da aba do navegador -->
+    <title>Página de Finalização</title>
+
+    <!-- Ícone que aparece na aba do navegador -->
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+
+    <!-- Pré-carrega a conexão com o Google Fonts para otimizar o carregamento da fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Importa a fonte "Poppins" do Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilo CSS interno (aplica apenas a esta página) -->
+    <style>
+        /* Define uma classe chamada "cor" que muda a cor do texto para vermelho */
+        .cor {
+            color: red;
+        }
+
+        /* Estilo para o botão da página */
+        .botoes {
+            background-color: rgb(50, 49, 49); /* Cor de fundo cinza escuro */
+            color: whitesmoke; /* Cor do texto branca */
+            border-radius: 12px; /* Deixa os cantos arredondados */
+            font-size: 15px; /* Define o tamanho da fonte */
+            padding: 1px 5px; /* Espaçamento interno (vertical e horizontal) */
+        }
+    </style>
+</head>
+
+<body style="background-image: linear-gradient(to left, #f1d8c9, #f2c3a7);">
+    <!-- Define o fundo da página com um degradê de tons claros -->
+
+    <!-- Título pequeno no topo da página -->
+    <h4>Comércio Eletrônico - Contato Realizado</h4>
+
+    <!-- Div principal que serve como "janela" (pop-up) de confirmação -->
+    <div class="popUp">
+        <h2>Contato efetuado!</h2> <!-- Título principal dentro do pop-up -->
+
+        <!-- Div que contém as informações do sucesso do contato -->
+        <div class="popUpINFO">
+            <h3>Seu contato <br>foi efetuado com sucesso!</h3> <!-- Mensagem de sucesso -->
+            <h5>Obrigado por entrar em contato. Sua mensagem foi recebida e em breve retornaremos.</h5> <!-- Mensagem de agradecimento -->
+
+            <!-- Área com os botões -->
+            <div class="btnPaginaFinalizar">
+                <!-- Link para voltar à página inicial -->
+                <a href="PaginaInicial.html">
+                    <button class="botoes">Retornar à Página Inicial</button>
+                </a>
+                😁 <!-- Emoji simpático para deixar a página mais leve -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
