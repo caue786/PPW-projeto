@@ -2,7 +2,10 @@
 img{
     width: 200px;
     height: 100px;
-
+}
+a {
+    color: rgb(0, 0, 0);
+    /* Cor preta */
 }
  /*Abaixo, tag P usada nas paginas carrinho e produto: */
 p{
@@ -116,6 +119,20 @@ header{
     justify-content: center;
     margin-top: 25px;
     min-height: auto;
+}
+
+.cardFormulario{
+     margin: 0px;
+    background-color: rgb(247, 245, 245);
+    color: rgb(20, 20, 20);
+    text-align: center;
+    width: 450px;
+    height: 560px;
+}
+.cardFormulario>p{
+ margin-top: 55px;
+    text-align: justify;
+    font-size: 18px;
 }
 /*Estilização de cada container*/
 .cardCarrinho{
