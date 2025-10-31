@@ -1,14 +1,11 @@
 /*Tamanho das imagens da pagina de produtos*/
-img{
+/*img{
     width: 200px;
     height: 100px;
-}
-a {
-    color: rgb(0, 0, 0);
-    /* Cor preta */
-}
+}*/
+
  /*Abaixo, tag P usada nas paginas carrinho e produto: */
-p{
+/*p{
     float: left;
     background-color: transparent;
     padding-left: 5px;
@@ -17,12 +14,11 @@ p{
     height: 32px;
     width: 260px;
 }
-/*Estilização da logo do IFG na pagina produtos*/
+/*
 .logo{
-    width: 90px;
-    height: auto;
-    float: left;
-}
+    width: 30px;
+    height: 24;
+}*/
 
 /*Tag usada nos titulos dos produtos na pagina de produtos: */
 h4{
@@ -39,7 +35,7 @@ h4{
     margin-right: 25px;
 }
 
-/*Estilização da caixa de busca na pagina de produtos: */
+/*Estilização da caixa de busca na pagina de produtos: 
 #txtBusca{
     background-color:aliceblue;
     font-style: italic;
@@ -52,49 +48,35 @@ h4{
     margin-top: 5px;
 }
 /*Estilo da tag header na maioria das paginas: */
-header{
+/*header{
     background-image: linear-gradient(to left, #f1d8c9, #f2c3a7);
     min-height: 130px;
     padding-top: 30px;
     margin-top: 0px;
 }
+*/
 
-/*Estilização para todas as paginas*/
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-}
 /*Css abaixo da Pagina de Produtos:*/
 /*Estilização do container principal da seção de produtos*/
-.main{
+/*.main{
 
     display: flex;
     justify-content: center;
 
-}
+}*/
 /*Estilização dos containers que envolvem as imagens/descrição*/
-.card{
-    margin: 20px;
+/*.card{
+    margin: 10px;
     background-color: rgb(233, 227, 227);
     color: rgb(20, 20, 20);
     text-align: center;
-    width: 300px;
+    width: 350px;
     height: 400px;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
+}*/
 
-/*Como cada imagem se comporta*/
-.card>img{
-    width: 100%;
-    height: 150px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
+
 /*Titulo dos produtos*/
 .card>h4{
     text-align: center;
@@ -102,15 +84,10 @@ header{
 }
 
 /*Botoes de adicionar ao carrinho: */
-.btnCOMPRAR{
-    font-size: 15px;
-    padding: 8px 30px;
-    border: none;
-    background-color: rgb(50, 49, 49);
-    color: whitesmoke;
-    border-radius: 10px;
-    font-weight: 600;
-}
+/*.btn{
+    justify-content: center;
+
+}*/
 
 /*CSS Pagina do Carrinho: */
 /*Container principal que engloba todos*/
@@ -244,6 +221,42 @@ header{
     margin-top: 240px;
 }
 
+
+
+
+
+
+
+
+/*styles mantidos na pagina produto na fase 2:*/
+
+/*Como cada imagem se comporta*/
+.card>img{
+    width: 100%;
+    height: 150px;
+    border-radius: 10px 10px 5px 5px;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    /* Cor preta */
+}
+
+/*LOGO DO IF NA NAVBAR*/
+.navbar-brand>img{
+    width: 40px;
+    height: 34px;
+}
+
+/*Estilização para todas as paginas*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+
 /* Abaixo: CSS do rodapé: */
 .icones-sociais{
     display: flex;
@@ -260,6 +273,36 @@ header{
  
 
 footer{
-    background-image: linear-gradient(to left, #f1d8c9, #f2c3a7);
+    background-image: linear-gradient(to right, #21B6DB, #1c50d3);
     height: auto;
+
+}
+
+/*Estilos mantidos na pagina carrinho na fase 2*/
+.btn-gradiente {
+    background-image: linear-gradient(to right, #21B6DB, #1c50d3); 
+    color: #ffffff; 
+    border: none;   
+    transition: filter 0.2s ease; 
+}
+
+.btn-gradiente:hover,
+.btn-gradiente:focus {
+    filter: brightness(90%); /* Deixa 10% mais escuro */
+    color: #ffffff;
+}
+
+/*Estilos mantidos na pagina sucesso-pedido fase 2*/
+.timeline-step i {
+    font-size: 3rem;
+    color: #000000; 
+}
+.arrowsize i{
+    font-size: 3rem;
+    color: gray;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: violet;
+    --bs-tooltip-color: white;
 }

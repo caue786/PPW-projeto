@@ -1,93 +1,203 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <title>Página do Carrinho</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    <style>
-        .botoescarrinho{
-        
-            background-color: rgb(50, 49, 49);
-            color: whitesmoke;
-            border-radius: 10px;
-            font-size: 15px;
-            width: auto;
-            padding: 9px 15px;
-            margin: 3px;
-        }
-
-        .fraseH1{
-            width: auto;
-            height: auto;
-            float: left;
-            margin-left: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
-<body>
-    <h4>Comércio Eletrônico - Carrinho</h4>
+<body class="d-flex flex-column min-vh-100">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <header>
-        <h1 class="fraseH1">Meu Carrinho de Compras</h1>
-        <img src="imagens/symbole-charrette-noire.png" alt="botao carrinho" class="carrinho">
-
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <img src="imagens/iconeuser.png" alt="LOGO DO IFG"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Olá, seja bem-vindo!
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Meus dados</a></li>
+                                <li><a class="dropdown-item" href="#">Meus pedidos</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a class="navbar-brand" href="carrinho.html" target="_blank"> <img
+                            src="imagens/symbole-charrette-noire.png" alt="Simbolo carrinho de compras"></a>
+                </div>
+            </div>
+        </nav>
     </header>
+    <h1 class="display-5 container text-center mb-4">Meu carrinho de compras</h1>
 
-     <div class="mainCarrinho">
 
-        <div class="cardCarrinho cardImagens">
-            <img src="imagens/smarttv4K.jpg" alt="smarttv4K">
-            <h6>Preço: 2.448,01</h6>
-            <h6>Quantidade: 1</h6>
-            <img src="imagens/smartTV40.jpg" alt="smartTV40">
-            <h6>Preço: 1.199,99</h6>
-            <h6>Quantidade: 1</h6>
-            
-        </div>
+    <div class="container text-center mb-5">
+        <div class="row">
+            <div class="col">
+                <div class="card mb-3 h-100" style="max-width: 540px;">
+                    <div class="row g-0 h-100">
+                        <div class="col-md-4">
+                            <img src="imagens/ECHODOT SMART SPEAKER.jpg" class="img-fluid rounded-start h-100"
+                                style="object-fit: cover;" alt="Amazon Echo Dot Max">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body d-flex flex-column h-100">
+                                <h5 class="card-title">Amazon Echo Dot Max</h5>
+                                <p class="card-text text-center">smart speaker com Alexa, som envolvente e hub de casa inteligente integrado, 1x 0.8" tweeter, 1x 2.5" cor ROXA 
+                                </p>
+                                <p class="card-text mt-auto"><small class="text-body-secondary">Quase esgotado</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="cardCarrinho cardDescricao">
-            <p>55" LG UHD 55UA85 Processador α7 AI Ger8 4K Super Upscaling Google Cast Alexa Integrado Controle AI Smart Magic WebOS 25</p>
-            <p style="margin-top: 225px;">Smart TV 4K 40" Philco FHD Smart PTV40 Roku TV LED Full HD Processador Quad-Core Dolby Audio Wi-Fi Integrado Netflix YouTube HDMI USB Bivolt</p>
-        </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3 h-100" style="max-width: 540px;">
+                    <div class="row g-0 h-100">
+                        <div class="col-md-4">
+                            <img src="imagens/ASUS ROG NOTEBOOK.jpg" class="img-fluid rounded-start h-100"
+                                style="object-fit: cover;" alt="ASUS 2025 ROG Strix G16">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body d-flex flex-column h-100">
+                                <h5 class="card-title">ASUS 2025 ROG Strix G16</h5>
+                                <p class="card-text text-center">Gaming Laptop, 16" FHD 165Hz Display, 16-Core AMD Ryzen 9 8940HX, RTX 5070 Ti (TGP 140W), MUX Switch, Window 11 (64GB RAM 4TB PCIe SSD)</p>
+                                <p class="card-text mt-auto"><small class="text-body-secondary">Em estoque</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="cardCarrinho cardResumo">
-            <h3>RESUMO DO PEDIDO :</h3>
-            <ul>
-                <li>Smart TV 4K 55" LG UHD 55UA85 Processador α7 (Qtd. 1)</li>
-                <li>Smart TV 4K 40" Philco FHD Smart (Qtd. 1)</li>
-            </ul>
-            <p style="margin-bottom: 30px;"> <u>Total (2 Produtos) = R$3.648 </u> Divida em até 10x sem juros 10x de R$364,80 </p>
-            <p><u>Entregar em:</u>
-            <i>Mountain View 1600 Amphitheatre Parkway Mountain View, CA 94043 United States</i>
-            </p>
-            
-            <div class="cardCarrinho cardBotoes">
-                <a href="produtos.html"><button class="botoescarrinho">Retornar à lista de Produtos</button></a>
-                <a href="sucesso-pedido.html"><button class="botoescarrinho">Finalizar a compra</button></a>
+            </div>
+            <div class="col">
+                <div class="card mb-3 h-100" style="max-width: 540px;">
+                    <div class="row g-0 h-100">
+                        <div class="col-md-4">
+                            <img src="imagens/projetor smart.jpg" class="img-fluid rounded-start h-100"
+                                style="object-fit: cover;" alt="Projetor Smart 1080P 4K">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body d-flex flex-column h-100">
+                                <h5 class="card-title">Projetor Smart 1080P 4K</h5>
+                                <p class="card-text text-center">Full HD Portátil com Alto-Falante Integrado, 11000 Lm WiFi 6, Bluetooth 5.0 e Correção Automática - bettdow AC1059, Beige</p>
+                                <p class="card-text mt-auto"><small class="text-body-secondary">Em estoque</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
-        <footer>
+    <div class="card  text-center mb-5">
+        <div class="card-header text-muted">
+            Seus itens (4)
+        </div>
+        <div class="card-body">
+            <ol class="list-group list-group-numbered mb-3">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Amazon Echo Dot Max</div>
+                        <p class="text-start"> R$472,80</p>
+                    </div>
+                    <span class="badge text-bg-primary rounded-pill">Qtd 2</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">ASUS 2025 ROG Strix G16</div>
+                        <p class="text-start"> R$19.261</p>
+                    </div>
+                    <span class="badge text-bg-primary rounded-pill">Qtd 1</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Projetor Smart 1080P 4K</div>
+                        <p class="text-start"> R$499,99</p>
+                    </div>
+                    <span class="badge text-bg-primary rounded-pill">Qtd 1</span>
+                </li>
+            </ol>
+            <div class="row gx-3">
+                <div class="col-sm-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-muted">Endereço de entrega</h5>
+                            <blockquote class="blockquote">
+                                <p class="lh-base"><strong class="card-title fw-muted">Entregar em:</strong>
+                                    Mountain View 1600 <br>
+                                    Amphitheatre Parkway
+                                    Mountain View <br>CA 94043 United States</p>
+                            </blockquote>
+                            <div class="d-flex justify-content-center mt-auto">
+                                <a href="#" class="btn btn-gradiente">Acessar meus dados</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-muted">Total</h5>
+                            <h1 class="display-6 fw-bold">R$20.706,59</h1>
+                            <p class=" text-muted">Dividido em até 10x sem juros de R$2.070,659</p>
+                            <div class="d-flex gap-2 justify-content-center mt-auto">
+                                <a href="#" class="btn btn-gradiente">Finalizar pedido</a>
+                                <a href="#" class="btn btn-gradiente">Voltar para a página de produtos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-auto">
         <div class="icones-sociais">
-            <a href="https://www.facebook.com/facebook?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.facebook.com/facebook?locale=pt_BR" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>
             <a href="https://www.instagram.com/instagram/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="http://www.youtube.com/@youtubecreators" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             <a href="https://x.com/X" target="_blank"><i class="fa-brands fa-x"></i></a>
         </div>
 
-        
+
     </footer>
 
 </body>
+
 </html>
