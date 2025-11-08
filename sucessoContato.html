@@ -1,68 +1,133 @@
-<!DOCTYPE html> <!-- Define o tipo do documento como HTML5 -->
-<html lang="en"> <!-- Informa que o idioma da página é inglês (poderia ser "pt-BR" se quiser em português) -->
+<!DOCTYPE html>
+<html>
 
 <head>
-    <!-- Importa o arquivo de estilo externo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Define o título da aba do navegador -->
-    <title>Página de Finalização</title>
-
-    <!-- Ícone que aparece na aba do navegador -->
+    <title>Pedido finalizado</title>
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-
-    <!-- Pré-carrega a conexão com o Google Fonts para otimizar o carregamento da fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Importa a fonte "Poppins" do Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Estilo CSS interno (aplica apenas a esta página) -->
-    <style>
-        /* Define uma classe chamada "cor" que muda a cor do texto para vermelho */
-        .cor {
-            color: red;
-        }
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-        /* Estilo para o botão da página */
-        .botoes {
-            background-color: rgb(50, 49, 49); /* Cor de fundo cinza escuro */
-            color: whitesmoke; /* Cor do texto branca */
-            border-radius: 12px; /* Deixa os cantos arredondados */
-            font-size: 15px; /* Define o tamanho da fonte */
-            padding: 1px 5px; /* Espaçamento interno (vertical e horizontal) */
-        }
-    </style>
+
 </head>
 
-<body style="background-image: linear-gradient(to left, #f1d8c9, #f2c3a7);">
-    <!-- Define o fundo da página com um degradê de tons claros -->
+<body class="d-flex flex-column min-vh-100">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
-    <!-- Título pequeno no topo da página -->
-    <h4>Comércio Eletrônico - Contato Realizado</h4>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <img src="imagens/iconeuser.png" alt="LOGO DO IFG"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Olá, seja bem-vindo!
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="meus_dados.html">Meus dados</a></li>
+                                <li><a class="dropdown-item" href="meus_pedidos.html">Meus pedidos</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a class="navbar-brand" href="carrinho.html" target=""> <img src="imagens/symbole-charrette-noire.png" alt="Simbolo carrinho de compras"></a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <!-- Div principal que serve como "janela" (pop-up) de confirmação -->
-    <div class="popUp">
-        <h2>Contato efetuado!</h2> <!-- Título principal dentro do pop-up -->
 
-        <!-- Div que contém as informações do sucesso do contato -->
-        <div class="popUpINFO">
-            <h3>Seu contato <br>foi efetuado com sucesso!</h3> <!-- Mensagem de sucesso -->
-            <h5>Obrigado por entrar em contato. Sua mensagem foi recebida e em breve retornaremos.</h5> <!-- Mensagem de agradecimento -->
+    <div class=" text-center">
+        <div class="container my-5">
 
-            <!-- Área com os botões -->
-            <div class="btnPaginaFinalizar">
-                <!-- Link para voltar à página inicial -->
-                <a href="PaginaInicial.html">
-                    <button class="botoes">Retornar à Página Inicial</button>
-                </a>
-                😁 <!-- Emoji simpático para deixar a página mais leve -->
+            <div class="d-flex justify-content-around text-center mb-5">
+
+                <div class="timeline-step">
+                    <i class="bi bi-clipboard-check"></i>
+                </div>
+                <div class="timeline-step arrowsize">
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+
+                <div class="timeline-step ">
+                    <i class="bi bi-cart-plus"></i>
+                </div>
+                <div class="timeline-step arrowsize">
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+
+
+                <div class="timeline-step">
+                    <i class="bi bi-credit-card"></i>
+                </div>
+                <div class="timeline-step arrowsize">
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+
+
+                <div class="timeline-step">
+                    <i class="bi bi-gift"></i>
+
+                </div>
+                <div class="timeline-step arrowsize">
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+
+
+                <div class="timeline-step">
+                    <i class="bi bi-truck"></i>
+                </div>
+
             </div>
         </div>
+
+        <div class="card-body mb-5">
+            <h1 class="display-6">
+              
+                <h1 class="display-5 text-center mb-5">Contato realizado com sucesso</h1>
+            <p class="card-text">Agora e so aguardar a resposta em seu endereço de email.</p>
+            <p><a class="link-opacity-75" href="PaginaInicial.html">Página inicial</a></p>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <a href="produtos.html" class="btn btn-gradiente">Voltar para a página de produtos</a>
+        </div>
     </div>
+
+    <footer class="mt-auto">
+        <div class="icones-sociais">
+            <a href="https://www.facebook.com/facebook?locale=pt_BR" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/instagram/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="http://www.youtube.com/@youtubecreators" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://x.com/X" target="_blank"><i class="fa-brands fa-x"></i></a>
+        </div>
+
+
+    </footer>
 
 </body>
 
