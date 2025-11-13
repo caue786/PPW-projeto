@@ -302,10 +302,6 @@ footer{
     color: gray;
 }
 
-.custom-tooltip {
-    --bs-tooltip-bg: violet;
-    --bs-tooltip-color: white;
-}
 
 .btn-cardcolor {
     background-color:#F8F9FA;
@@ -314,17 +310,21 @@ footer{
     transition: filter 0.2s ease; 
 }
 
+
 /*estilos para as paginas meu pedido #xxxxx*/
 .card-img-fixed-height {
-  /* Defina aqui a altura fixa que você deseja para a imagem */
   height: 335px; 
-  
-  /* Você pode ajustar os 250px para 200px, 300px, etc. 
-     Use a altura que a imagem da TV tem e que você gostou. */
+
 }
 
 .card-img-fixed-height img {
   width: 100%;
-  height: 100%; /* A imagem vai preencher os 250px de altura do contêiner */
-  object-fit: cover; /* Esta é a mágica: a imagem preenche o espaço e é "cortada" se necessário, sem distorcer. */
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.darkmode{
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
 }
