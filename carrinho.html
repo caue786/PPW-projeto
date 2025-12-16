@@ -62,96 +62,25 @@
 
 
     <div class="container text-center mb-5">
-        <div class="row">
-            <div class="col">
-                <div class="card mb-3 h-100" style="max-width: 540px;">
-                    <div class="row g-0 h-100">
-                        <div class="col-md-4">
-                            <img src="imagens/ECHODOT SMART SPEAKER.jpg" class="img-fluid rounded-start h-100"
-                                style="object-fit: cover;" alt="Amazon Echo Dot Max">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body d-flex flex-column h-100">
-                                <h5 class="card-title">Amazon Echo Dot Max</h5>
-                                <p class="card-text text-center">smart speaker com Alexa, som envolvente e hub de casa inteligente integrado, 1x 0.8" tweeter, 1x 2.5" cor ROXA 
-                                </p>
-                                <p class="card-text mt-auto"><small class="text-body-secondary">Quase esgotado</small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-            <div class="col">
-                <div class="card mb-3 h-100" style="max-width: 540px;">
-                    <div class="row g-0 h-100">
-                        <div class="col-md-4">
-                            <img src="imagens/ASUS ROG NOTEBOOK.jpg" class="img-fluid rounded-start h-100"
-                                style="object-fit: cover;" alt="ASUS 2025 ROG Strix G16">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body d-flex flex-column h-100">
-                                <h5 class="card-title">ASUS 2025 ROG Strix G16</h5>
-                                <p class="card-text text-center">Gaming Laptop, 16" FHD 165Hz Display, 16-Core AMD Ryzen 9 8940HX, RTX 5070 Ti (TGP 140W), MUX Switch, Window 11</p>
-                                <p class="card-text mt-auto"><small class="text-body-secondary">Em estoque</small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col">
-                <div class="card mb-3 h-100" style="max-width: 540px;">
-                    <div class="row g-0 h-100">
-                        <div class="col-md-4">
-                            <img src="imagens/projetor smart.jpg" class="img-fluid rounded-start h-100"
-                                style="object-fit: cover;" alt="Projetor Smart 1080P 4K">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body d-flex flex-column h-100">
-                                <h5 class="card-title">Projetor Smart 1080P 4K</h5>
-                                <p class="card-text text-center">Full HD Portátil com Alto-Falante Integrado, 11000 Lm WiFi 6, Bluetooth 5.0 e Correção Automática - bettdow AC1059, Beige</p>
-                                <p class="card-text mt-auto"><small class="text-body-secondary">Em estoque</small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div class="row " id="lista-carrinho">
         </div>
     </div>
 
+   
+
+
+
     <div class="card  text-center mb-5">
         <div class="card-header text-muted">
-            Seus itens (4)
+            Seus itens:
         </div>
         <div class="card-body">
-            <ol class="list-group list-group-numbered mb-3">
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Amazon Echo Dot Max</div>
-                        <p class="text-start"> R$472,80</p>
-                    </div>
-                    <span class="badge text-bg-primary rounded-pill">Qtd 2</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">ASUS 2025 ROG Strix G16</div>
-                        <p class="text-start"> R$19.261</p>
-                    </div>
-                    <span class="badge text-bg-primary rounded-pill">Qtd 1</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Projetor Smart 1080P 4K</div>
-                        <p class="text-start"> R$499,99</p>
-                    </div>
-                    <span class="badge text-bg-primary rounded-pill">Qtd 1</span>
-                </li>
+            <ol class="list-group list-group-numbered mb-3" id="resumo-carrinho">
+                
             </ol>
+
+
             <div class="row gx-3">
                 <div class="col-sm-6">
                     <div class="card h-100">
@@ -174,8 +103,8 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title text-muted">Total</h5>
-                            <h1 class="display-6 fw-bold">R$20.706,59</h1>
-                            <p class=" text-muted">Dividido em até 10x sem juros de R$2.070,659</p>
+                            <h1 class="display-6 fw-bold" id="total-carrinho">R$ 0,00</h1>
+                            <p class=" text-muted">Dividido em até 10x sem juros</p>
                             <div class="d-flex gap-2 justify-content-center mt-auto">
                                 <a href="sucesso-pedido.html" class="btn btn-gradiente">Finalizar pedido</a>
                                 <a href="produtos.html" class="btn btn-gradiente">Voltar para a página de produtos</a>
@@ -198,6 +127,7 @@
 
     </footer>
 
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

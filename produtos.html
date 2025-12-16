@@ -23,7 +23,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-    
+
 
 
 </head>
@@ -34,7 +34,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <header>
-        
+
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <img src="imagens/iconeuser.png" alt="LOGO DO IFG"></a>
@@ -62,9 +62,11 @@
                             </ul>
                         </li>
                     </ul>
-                    <a class="navbar-brand" href="carrinho.html" target="_blank"> <img src="imagens/symbole-charrette-noire.png" alt="Simbolo carrinho de compras"></a>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar produto.."
+                    <a class="navbar-brand" href="carrinho.html" target="_blank"> <img
+                            src="imagens/symbole-charrette-noire.png" alt="Simbolo carrinho de compras"></a>
+
+                    <form class="d-flex" role="search" id="form-busca">
+                        <input class="form-control me-2" type="search" id="input-busca" placeholder="Buscar produto.."
                             aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
@@ -105,121 +107,36 @@
         </button>
     </div>
 
+
+
     <h1 class="display-5 container text-center mb-3">Confira nossos produtos em promoção</h1>
 
     <div class="container text-center mb-4">
-        <div class="row row-cols-auto justify-content-center">
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="imagens/ECHODOT SMART SPEAKER.jpg" class="card-img-top" alt="ECHODOT">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Amazon Echo Dot Max </h5>
-                        <p class="card-text">Smart speaker com Alexa, som envolvente e hub de casa inteligente integrado, 1x 0.8" tweeter, 1x 2.5" cor ROXA.</p>
-                        <p class="text-decoration-line-through text-danger"> R$859,65 </p> <p class="card-text text-center"> 45% off R$472,80</p>
-                        <a href="#" class="btn btn-dark mt-auto">Adicionar ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="imagens/monitorcurvo.jpg" class="card-img-top" alt="MONITOR CURVO">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Monitor Curvo</h5>
-                        <p class="card-text">23.6 Polegadas 100Hz Full HD LED – Tela 1500R, 1MS, 98% sRGB, HDMI/VGA, Adaptive Sync Home office</p>
-                        <p class="text-decoration-line-through text-danger"> R$945,89 </p> <p class="card-text text-center"> 45% off R$520,23</p>
-                        <a href="#" class="btn btn-dark mt-auto">Adicionar ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="imagens/pc gamer.jpg" class="card-img-top" alt="COMPUTADOR GAMER COMPLETO">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">PC Gamer Completo</h5>
-                        <p class="card-text">PC Gamer Completo Intel Core i7 16GB SSD 1TB Monitor 23" Kit Gamer Fonte 400W Strong Tech.</p>
-                        <p class="text-decoration-line-through text-danger"> R$6.163,09 </p> <p class="card-text text-center"> 45% off R$3.389,69</p>
-                        <a href="#" class="btn btn-dark mt-auto">Adicionar ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="imagens/iphone16 512gb.jpg" class="card-img-top" alt="Iphone 16 cores 512GB">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Apple iPhone 16 (512 GB)</h5>
-                        <p class="card-text">iPhone com iOS 18 Cabo para recarga com conector USB-C, Tela Super Retina XDR OLED sem bordas de 6,1 polegadas </p>
-                        <p class="text-decoration-line-through text-danger"> R$9.089,10 </p> <p class="card-text text-center"> 50% off R$4.544,55</p>
-                        <a href="#" class="btn btn-dark mt-auto">Adicionar ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
+        <div class="row row-cols-auto justify-content-center" id="lista-produtos">
+
         </div>
     </div>
-
 
     <h1 class="display-5 container text-center mb-3">De volta ao estoque</h1>
 
-
     <div class="container text-center mb-5">
-        <div class="row row-cols-auto justify-content-center">
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="imagens/philips smart tv.jpg" class="card-img-top" alt="philips smart tv">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">PHILIPS Smart TV 43"</h5>
-                        <p class="card-text">Full HD, 43PFG6909/78, Google TV, Comando de Voz, 	Dolby Audio, Google Assistente Integrado, Google TV, HDR10/HLG</p>
-                        <p class="card-text text-center">R$1.449,88</p>
-                        <a href="#" class="btn btn-dark mt-auto">Adicionar ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="imagens/projetor.jpg" class="card-img-top" alt="projetor de imagens">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Basike Projetor portatil</h5>
-                        <p class="card-text">Projetor Inteligente Full HD 1080P 15000 Lumens, 2.4G+5G+WIFI 6 Android 12, Bluetooth 5.4, Suporte 4K e Montagem 180°</p>
-                        <p class="card-text text-center">R$997,12</p>
-                        <a href="#" class="btn btn-dark mt-auto">Adicionar ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="imagens/projetor smart.jpg" class="card-img-top" alt="projetor de imagens smart">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Projetor Smart 1080P 4K</h5>
-                        <p class="card-text"> Full HD Portátil com Alto-Falante Integrado, 11000 Lm WiFi 6, Bluetooth 5.0 e Correção Automática - bettdow AC1059, Beige</p>
-                        <p class="card-text text-center">R$499,99</p>
-                        <a href="#" class="btn btn-dark mt-auto">Adicionar ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100" style="width: 18rem;">
-                    <img src="imagens/ASUS ROG NOTEBOOK.jpg" class="card-img-top" alt="NOTEBOOK ASUS ROG">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">ASUS 2025 ROG Strix G16</h5>
-                        <p class="card-text">Gaming Laptop, 16" FHD 165Hz Display, 16-Core AMD Ryzen 9 8940HX, RTX 5070 Ti (TGP 140W), MUX Switch, Window 11 (64GB RAM 4TB PCIe SSD)</p>
-                        <p class="card-text text-center">R$19.261</p>
-                        <a href="#" class="btn btn-dark mt-auto">Adicionar ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
+        <div class="row row-cols-auto justify-content-center" id="lista-estoque">
         </div>
     </div>
 
 
-        <footer class="mt-auto">
+    <footer class="mt-auto">
         <div class="icones-sociais">
-            <a href="https://www.facebook.com/facebook?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.facebook.com/facebook?locale=pt_BR" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>
             <a href="https://www.instagram.com/instagram/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="http://www.youtube.com/@youtubecreators" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             <a href="https://x.com/X" target="_blank"><i class="fa-brands fa-x"></i></a>
         </div>
 
-        
+
     </footer>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
