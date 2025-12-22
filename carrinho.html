@@ -67,7 +67,7 @@
         </div>
     </div>
 
-   
+
 
 
 
@@ -77,57 +77,72 @@
         </div>
         <div class="card-body">
             <ol class="list-group list-group-numbered mb-3" id="resumo-carrinho">
-                
+
             </ol>
 
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-muted mb-3">Calcular Frete</h5>
+                <div class="input-group mb-3">
+                    <input type="text" id="input-cep" class="form-control" placeholder="Digite seu CEP" maxlength="9">
+                    <button class="btn btn-outline-secondary" type="button" onclick="calcularFrete()">Calcular</button>
+                </div>
 
-            <div class="row gx-3">
-                <div class="col-sm-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-muted">Endereço de entrega</h5>
-                            <blockquote class="blockquote">
-                                <p class="lh-base"><strong class="card-title fw-muted">Entregar em:</strong>
-                                    Mountain View 1600 <br>
-                                    Amphitheatre Parkway
-                                    Mountain View <br>CA 94043 United States</p>
-                            </blockquote>
-                            <div class="d-flex justify-content-center mt-auto">
-                                <a href="meus_dados.html" class="btn btn-gradiente">Acessar meus dados</a>
+                <div id="opcoes-frete" class="mb-3 text-start"></div>
+
+                <hr>
+
+
+                <div class="row gx-3">
+                    <div class="col-sm-6">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-muted">Endereço de entrega</h5>
+                                <blockquote class="blockquote">
+                                    <p class="lh-base"><strong class="card-title fw-muted">Entregar em:</strong>
+                                        Mountain View 1600 <br>
+                                        Amphitheatre Parkway
+                                        Mountain View <br>CA 94043 United States</p>
+                                </blockquote>
+                                <div class="d-flex justify-content-center mt-auto">
+                                    <a href="meus_dados.html" class="btn btn-gradiente">Acessar meus dados</a>
+                                </div>
+
                             </div>
-
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-muted">Total</h5>
-                            <h1 class="display-6 fw-bold" id="total-carrinho">R$ 0,00</h1>
-                            <p class=" text-muted">Dividido em até 10x sem juros</p>
-                            <div class="d-flex gap-2 justify-content-center mt-auto">
-                                <a href="sucesso-pedido.html" class="btn btn-gradiente">Finalizar pedido</a>
-                                <a href="produtos.html" class="btn btn-gradiente">Voltar para a página de produtos</a>
+                    <div class="col-sm-6">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+
+                                <h5 class="card-title text-muted">Total</h5>
+                                <h1 class="display-6 fw-bold" id="total-carrinho">R$ 0,00</h1>
+                                <p class=" text-muted">Dividido em até 10x sem juros</p>
+                                <div class="d-flex gap-2 justify-content-center mt-auto">
+                                    <button onclick="finalizarPedido()" class="btn btn-gradiente w-100">Finalizar Pedido</button>
+                                    <a href="produtos.html" class="btn btn-gradiente">Voltar para a página de
+                                        produtos</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="mt-auto">
-        <div class="icones-sociais">
-            <a href="https://www.facebook.com/facebook?locale=pt_BR" target="_blank"><i
-                    class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/instagram/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="http://www.youtube.com/@youtubecreators" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://x.com/X" target="_blank"><i class="fa-brands fa-x"></i></a>
-        </div>
+        <footer class="mt-auto">
+            <div class="icones-sociais">
+                <a href="https://www.facebook.com/facebook?locale=pt_BR" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/instagram/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="http://www.youtube.com/@youtubecreators" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></a>
+                <a href="https://x.com/X" target="_blank"><i class="fa-brands fa-x"></i></a>
+            </div>
 
 
-    </footer>
+        </footer>
 
-    <script src="js/scripts.js"></script>
+        <script src="js/scripts.js"></script>
 </body>
 
 </html>

@@ -157,15 +157,17 @@ function adicionarAoCarrinho(id) {
 }
 
 // --- 3. MOSTRAR CARRINHO  ---
+// --- ATUALIZAÇÃO: Carregar Carrinho (Para suportar Frete) ---
+// Substitua a sua função 'carregarPaginaCarrinho' antiga por esta:
 function carregarPaginaCarrinho() {
-    const containerCards = document.getElementById('lista-carrinho'); 
     const containerResumo = document.getElementById('resumo-carrinho');
     const elementoTotal = document.getElementById('total-carrinho');
+    const elementoSubtotal = document.getElementById('valor-subtotal');
+    const containerCards = document.getElementById('lista-carrinho');
 
-    if (!containerResumo) return; 
+    if (!containerResumo) return;
 
-    
-    if (containerCards) containerCards.innerHTML = '';
+    if (containerCards) containerCards.innerHTML = ''; 
     containerResumo.innerHTML = '';
 
     const carrinho = JSON.parse(localStorage.getItem('carrinho_compras')) || [];
@@ -174,21 +176,19 @@ function carregarPaginaCarrinho() {
     if (carrinho.length === 0) {
         containerResumo.innerHTML = '<div class="alert alert-info">Seu carrinho está vazio.</div>';
         if (elementoTotal) elementoTotal.innerText = 'R$ 0,00';
+        if (elementoSubtotal) elementoSubtotal.innerText = 'R$ 0,00';
         return;
     }
 
     carrinho.forEach(item => {
-        
-        const qtd = item.quantidade || 1;
+        const qtd = item.quantidade || 1; 
         const totalItem = item.price * qtd;
-
         precoTotal += totalItem;
 
-        // Cria a lista
         const htmlItem = `
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center">
-                    <img src="${item.image}" style="width: 60px; height: 60px; object-fit: cover; margin-right: 15px; border-radius: 5px;">
+                    <img src="${item.image}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px; border-radius: 5px;">
                     <div>
                         <h6 class="mb-0 fw-bold">${item.name}</h6>
                         <small class="text-muted">Unit: R$ ${item.price.toFixed(2)}</small>
@@ -204,10 +204,110 @@ function carregarPaginaCarrinho() {
         containerResumo.innerHTML += htmlItem;
     });
 
-    // Atualiza o total
+    // Atualiza Subtotal e Total Inicial
+    if (elementoSubtotal) elementoSubtotal.innerText = precoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     if (elementoTotal) {
+        elementoTotal.dataset.valorReal = precoTotal; // Guarda o valor numérico escondido para contas
         elementoTotal.innerText = precoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     }
+}
+
+// --- 8. CÁLCULO DE FRETE (MOCK - Tarefa 7b) ---
+function calcularFrete() {
+    const cep = document.getElementById('input-cep').value;
+    const divOpcoes = document.getElementById('opcoes-frete');
+
+    if (cep.length < 8) {
+        alert("Por favor, digite um CEP válido (8 dígitos).");
+        return;
+    }
+
+    // Simulação de Loading
+    divOpcoes.innerHTML = '<p class="text-muted small">Calculando...</p>';
+
+    setTimeout(() => {
+        // Opções fictícias de frete
+        const opcoes = [
+            { nome: "PAC (Econômico)", valor: 25.00, prazo: "5 a 10 dias" },
+            { nome: "Sedex (Rápido)", valor: 45.90, prazo: "2 a 4 dias" }
+        ];
+
+        divOpcoes.innerHTML = ''; // Limpa o loading
+
+        opcoes.forEach((opcao, index) => {
+            divOpcoes.innerHTML += `
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="frete" id="frete-${index}" value="${opcao.valor}" onchange="atualizarTotalComFrete(${opcao.valor})">
+                    <label class="form-check-label w-100" for="frete-${index}">
+                        <div class="d-flex justify-content-between">
+                            <span>${opcao.nome} - ${opcao.prazo}</span>
+                            <strong>R$ ${opcao.valor.toFixed(2).replace('.', ',')}</strong>
+                        </div>
+                    </label>
+                </div>
+            `;
+        });
+    }, 1000); // Demora 1 segundo para parecer real
+}
+
+// --- 9. ATUALIZAR TOTAL QUANDO ESCOLHE FRETE ---
+function atualizarTotalComFrete(valorFrete) {
+    const elementoTotal = document.getElementById('total-carrinho');
+    const elementoSubtotal = document.getElementById('valor-subtotal');
+    
+    // Pega o valor dos produtos (limpando o R$ e trocando vírgula por ponto)
+    // Uma forma mais segura é recalcular do carrinho, mas vamos usar o texto da tela pra simplificar:
+    let valorProdutos = 0;
+    
+    // Recalcula o subtotal baseado no carrinho salvo (mais seguro)
+    const carrinho = JSON.parse(localStorage.getItem('carrinho_compras')) || [];
+    carrinho.forEach(item => {
+        valorProdutos += item.price * (item.quantidade || 1);
+    });
+
+    const totalFinal = valorProdutos + valorFrete;
+
+    elementoTotal.innerText = totalFinal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    
+    // Salva o frete escolhido temporariamente (para usar na finalização)
+    localStorage.setItem('frete_escolhido', valorFrete);
+}
+
+// --- 10. FINALIZAR PEDIDO (Tarefa 7c) ---
+// --- 10. FINALIZAR PEDIDO (Tarefa 7c) ---
+function finalizarPedido() {
+    const carrinho = JSON.parse(localStorage.getItem('carrinho_compras')) || [];
+    
+    // 1. Valida se tem coisas no carrinho
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    // 2. Cria o pacote do pedido (Gera o ID, Data e pega os Itens)
+    const novoPedido = {
+        id: Math.floor(Math.random() * 10000) + 1000, // Gera ID aleatório (ex: 12495)
+        data: new Date().toLocaleDateString(),
+        hora: new Date().toLocaleTimeString(), // Opcional
+        itens: carrinho,
+        total: carrinho.reduce((acc, item) => acc + (item.price * (item.quantidade || 1)), 0)
+        // Se tiver frete, somaria aqui também
+    };
+
+    // 3. Lê o histórico antigo de pedidos (se existir)
+    let historico = JSON.parse(localStorage.getItem('meus_pedidos')) || [];
+    
+    // 4. Adiciona o novo pedido na lista
+    historico.push(novoPedido);
+
+    // 5. GRAVA TUDO NA MEMÓRIA (Aqui é o segredo!) <---
+    localStorage.setItem('meus_pedidos', JSON.stringify(historico));
+
+    // 6. Limpa o carrinho atual (pois já virou pedido)
+    localStorage.removeItem('carrinho_compras');
+
+    // 7. REDIRECIONA PARA A PÁGINA DE SUCESSO <---
+    window.location.href = 'sucesso-pedido.html';
 }
 
 // --- 4. REMOVER ITEM ---
@@ -242,11 +342,62 @@ function configurarBusca() {
     }
 }
 
+// --- 11. LISTAR MEUS PEDIDOS (Tarefa 8) ---
+function carregarMeusPedidos() {
+    const containerPedidos = document.getElementById('lista-pedidos');
+    const msgVazio = document.getElementById('mensagem-vazio');
+
+    // Só roda se estiver na página "Meus Pedidos"
+    if (!containerPedidos) return;
+
+    const pedidos = JSON.parse(localStorage.getItem('meus_pedidos')) || [];
+
+    // Se não tiver pedidos, mostra a mensagem de vazio
+    if (pedidos.length === 0) {
+        if (msgVazio) msgVazio.classList.remove('d-none');
+        return;
+    }
+
+    // Desenha cada pedido
+    // Note o link: href="pedido.html?id=${pedido.id}" -> Isso cumpre a Tarefa 8b
+    pedidos.reverse().forEach(pedido => {
+        const dataFormatada = pedido.data || "Data desconhecida";
+        const totalFormatado = pedido.total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        
+        const htmlPedido = `
+            <div class="col-12 mb-3">
+                <div class="card shadow-sm">
+                    <div class="card-header d-flex justify-content-between align-items-center bg-light">
+                        <div>
+                            <strong>Pedido #${pedido.id}</strong>
+                            <span class="text-muted ms-2">Realizado em ${dataFormatada}</span>
+                        </div>
+                        <span class="badge bg-success">Concluído</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <p class="mb-1"><strong>Total:</strong> ${totalFormatado}</p>
+                                <p class="mb-0 text-muted">${pedido.itens.length} itens neste pedido</p>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <a href="pedido.html?id=${pedido.id}" class="btn btn-outline-primary">Visualizar Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        containerPedidos.innerHTML += htmlPedido;
+    });
+}
+
 // --- INICIALIZAÇÃO ---
 document.addEventListener('DOMContentLoaded', () => {
-    carregarProdutos();       // Carrega todos no início
+carregarProdutos();
     carregarPaginaCarrinho();
-    if (typeof atualizarCabecalho === 'function') atualizarCabecalho(); // Só se já tiver feito o login
-    
-    configurarBusca(); // <--- ATIVA A BUSCA AQUI
+    atualizarCabecalho();
+    configurarBusca();
+    atualizarBadgeCarrinho();
+    carregarMeusPedidos(); // <--- ADICIONE ESTA LINHA NOVA
 });
