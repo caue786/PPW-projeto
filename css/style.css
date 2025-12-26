@@ -21,10 +21,11 @@
 }*/
 
 /*Tag usada nos titulos dos produtos na pagina de produtos: */
+
 h4{
     text-align: left;
     margin: 0;
-    background-image: linear-gradient(to left, #f1d8c9, #f2c3a7);
+    background-image: linear-gradient(to right, #45d1f4, #4477f7);
 }
 
 /*Estilização do simbolo do carrinho na pagina produtos: */

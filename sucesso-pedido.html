@@ -53,7 +53,15 @@
                             </ul>
                         </li>
                     </ul>
-                    <a class="navbar-brand" href="carrinho.html" target=""> <img src="imagens/symbole-charrette-noire.png" alt="Simbolo carrinho de compras"></a>
+                    <a class="navbar-brand position-relative" href="carrinho.html" style="text-decoration: none;">
+                        <img src="imagens/symbole-charrette-noire.png" alt="Carrinho">
+
+                        <span id="badge-carrinho"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            style="font-size: 0.7rem;">
+                            0
+                        </span>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -105,9 +113,11 @@
         </div>
 
         <div class="card-body mb-5">
-            <h1 class="display-6">Pedido 
-                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="meus_pedidos.html">#12495
-                </a> finalizado</h1>
+            <h1 class="display-6">Pedido
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                    href="meus_pedidos.html">
+                </a> finalizado
+            </h1>
             <p class="card-text">Agora é só aguardar seu pedido chegar ao seu endereço.</p>
             <p><a class="link-opacity-75" href="PaginaInicial.html">Página inicial</a></p>
         </div>

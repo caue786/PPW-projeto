@@ -52,8 +52,15 @@
                             </ul>
                         </li>
                     </ul>
-                    <a class="navbar-brand" href="carrinho.html" target="_blank"> <img
-                            src="imagens/symbole-charrette-noire.png" alt="Simbolo carrinho de compras"></a>
+                    <a class="navbar-brand position-relative" href="carrinho.html" style="text-decoration: none;">
+                        <img src="imagens/symbole-charrette-noire.png" alt="Carrinho">
+
+                        <span id="badge-carrinho"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            style="font-size: 0.7rem;">
+                            0
+                        </span>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -118,7 +125,8 @@
                                 <h1 class="display-6 fw-bold" id="total-carrinho">R$ 0,00</h1>
                                 <p class=" text-muted">Dividido em até 10x sem juros</p>
                                 <div class="d-flex gap-2 justify-content-center mt-auto">
-                                    <button onclick="finalizarPedido()" class="btn btn-gradiente w-100">Finalizar Pedido</button>
+                                    <button onclick="finalizarPedido()" class="btn btn-gradiente w-100">Finalizar
+                                        Pedido</button>
                                     <a href="produtos.html" class="btn btn-gradiente">Voltar para a página de
                                         produtos</a>
                                 </div>

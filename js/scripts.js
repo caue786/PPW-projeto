@@ -154,6 +154,7 @@ function adicionarAoCarrinho(id) {
     }
 
     localStorage.setItem('carrinho_compras', JSON.stringify(carrinho));
+    atualizarBadgeCarrinho();
 }
 
 // --- 3. MOSTRAR CARRINHO  ---
@@ -273,40 +274,43 @@ function atualizarTotalComFrete(valorFrete) {
     localStorage.setItem('frete_escolhido', valorFrete);
 }
 
-// --- 10. FINALIZAR PEDIDO (Tarefa 7c) ---
-// --- 10. FINALIZAR PEDIDO (Tarefa 7c) ---
+// --- 10. FINALIZAR PEDIDO (Corrigido: Agora salva o Frete!) ---
 function finalizarPedido() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho_compras')) || [];
+    const freteSalvo = localStorage.getItem('frete_escolhido'); // 1. Tenta pegar o frete
     
-    // 1. Valida se tem coisas no carrinho
+    // Validação
     if (carrinho.length === 0) {
         alert("Seu carrinho está vazio!");
         return;
     }
 
-    // 2. Cria o pacote do pedido (Gera o ID, Data e pega os Itens)
+    // Se a pessoa não calculou frete, assume 0 (ou você pode bloquear se preferir)
+    const valFrete = parseFloat(freteSalvo) || 0;
+    
+    // Calcula a soma dos produtos
+    const valProdutos = carrinho.reduce((acc, item) => acc + (item.price * (item.quantidade || 1)), 0);
+
+    // Cria o pacote do pedido COMPLETO
     const novoPedido = {
-        id: Math.floor(Math.random() * 10000) + 1000, // Gera ID aleatório (ex: 12495)
+        id: Math.floor(Math.random() * 10000) + 1000,
         data: new Date().toLocaleDateString(),
-        hora: new Date().toLocaleTimeString(), // Opcional
+        hora: new Date().toLocaleTimeString(),
         itens: carrinho,
-        total: carrinho.reduce((acc, item) => acc + (item.price * (item.quantidade || 1)), 0)
-        // Se tiver frete, somaria aqui também
+        frete: valFrete,               // <--- SALVA O VALOR DO FRETE
+        total: valProdutos + valFrete  // <--- SOMA NO TOTAL DO PEDIDO
     };
 
-    // 3. Lê o histórico antigo de pedidos (se existir)
+    // Grava no histórico
     let historico = JSON.parse(localStorage.getItem('meus_pedidos')) || [];
-    
-    // 4. Adiciona o novo pedido na lista
     historico.push(novoPedido);
-
-    // 5. GRAVA TUDO NA MEMÓRIA (Aqui é o segredo!) <---
     localStorage.setItem('meus_pedidos', JSON.stringify(historico));
 
-    // 6. Limpa o carrinho atual (pois já virou pedido)
+    // Limpeza
     localStorage.removeItem('carrinho_compras');
+    localStorage.removeItem('frete_escolhido'); // Limpa o frete temporário
 
-    // 7. REDIRECIONA PARA A PÁGINA DE SUCESSO <---
+    // Redireciona
     window.location.href = 'sucesso-pedido.html';
 }
 
@@ -316,6 +320,7 @@ function removerDoCarrinho(id) {
     carrinho = carrinho.filter(item => item.id !== id);
     localStorage.setItem('carrinho_compras', JSON.stringify(carrinho));
     carregarPaginaCarrinho();
+    atualizarBadgeCarrinho();
 }
 
 
@@ -392,12 +397,115 @@ function carregarMeusPedidos() {
     });
 }
 
+
+// --- EXTRAS: FUNÇÕES QUE FALTAVAM ---
+
+// 1. Atualiza o Header com o nome do usuário
+function atualizarCabecalho() {
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuario_logado'));
+    // Procura elementos do menu (ajuste os seletores se necessário)
+    const nomeUsuario = document.querySelector('.navbar-nav .dropdown-toggle');
+    
+    if (usuarioLogado && nomeUsuario) {
+        nomeUsuario.innerText = `Olá, ${usuarioLogado.nome ? usuarioLogado.nome.split(' ')[0] : 'Cliente'}!`;
+    }
+}
+
+function atualizarBadgeCarrinho() {
+    const carrinho = JSON.parse(localStorage.getItem('carrinho_compras')) || [];
+    const totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 1), 0);
+    
+    // Procura o elemento pelo ID no HTML
+    const badge = document.getElementById('badge-carrinho');
+    
+    if (badge) {
+        badge.innerText = totalItens;
+    }
+}
+
+// 3. Logout
+function fazerLogout() {
+    localStorage.removeItem('usuario_logado');
+    window.location.href = 'login.html';
+}
+
+// 4. DETALHES DO PEDIDO (Para a página pedido.html funcionar)
+function carregarDetalhesPedido() {
+    const idDisplay = document.getElementById('detalhe-id');
+    if (!idDisplay) return; // Só roda na página certa
+
+    const params = new URLSearchParams(window.location.search);
+    const idPedido = params.get('id');
+
+    if (!idPedido) {
+        alert("Pedido não identificado.");
+        window.location.href = 'meus_pedidos.html';
+        return;
+    }
+
+    const pedidos = JSON.parse(localStorage.getItem('meus_pedidos')) || [];
+    const pedido = pedidos.find(p => p.id == idPedido);
+
+    if (!pedido) {
+        alert("Pedido não encontrado.");
+        window.location.href = 'meus_pedidos.html';
+        return;
+    }
+
+    // Preenche os dados
+    document.getElementById('detalhe-id').innerText = pedido.id;
+    document.getElementById('detalhe-data').innerText = pedido.data;
+    if(document.getElementById('detalhe-hora')) document.getElementById('detalhe-hora').innerText = pedido.hora || '';
+    
+    // Formata totais
+    const total = pedido.total || 0;
+    // Se tiver frete salvo no pedido, usa ele. Se não, assume 0 (ou ajusta conforme sua lógica anterior)
+    const frete = pedido.frete || 0; 
+    
+    if(document.getElementById('detalhe-frete')) 
+        document.getElementById('detalhe-frete').innerText = frete.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+    
+    document.getElementById('detalhe-total').innerText = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    // Lista itens
+    const lista = document.getElementById('detalhe-itens');
+    lista.innerHTML = '';
+    pedido.itens.forEach(item => {
+        lista.innerHTML += `
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="${item.image}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 15px;">
+                    <div>
+                        <h6 class="mb-0">${item.name}</h6>
+                        <small class="text-muted">${item.quantidade || 1}x R$ ${item.price.toFixed(2)}</small>
+                    </div>
+                </div>
+                <span>R$ ${(item.price * (item.quantidade || 1)).toFixed(2)}</span>
+            </li>
+        `;
+    });
+}
+
+
+
+
 // --- INICIALIZAÇÃO ---
+
 document.addEventListener('DOMContentLoaded', () => {
-carregarProdutos();
-    carregarPaginaCarrinho();
-    atualizarCabecalho();
-    configurarBusca();
-    atualizarBadgeCarrinho();
-    carregarMeusPedidos(); // <--- ADICIONE ESTA LINHA NOVA
+    // 1. Carrega produtos (se estiver na vitrine)
+    if (typeof carregarProdutos === 'function') carregarProdutos(); 
+    
+    // 2. Carrega carrinho (se estiver no carrinho)
+    if (typeof carregarPaginaCarrinho === 'function') carregarPaginaCarrinho();
+    
+    // 3. Funções de Layout (Só rodam se existirem)
+    if (typeof atualizarCabecalho === 'function') atualizarCabecalho();
+    if (typeof atualizarBadgeCarrinho === 'function') atualizarBadgeCarrinho();
+    if (typeof configurarBusca === 'function') configurarBusca();
+
+    // 4. AQUI ESTAVA O PROBLEMA: Agora ele vai chegar nesta linha!
+    if (typeof carregarMeusPedidos === 'function') carregarMeusPedidos(); 
+
+    // 5. Detalhes do Pedido
+    if (typeof carregarDetalhesPedido === 'function') carregarDetalhesPedido();
 });
