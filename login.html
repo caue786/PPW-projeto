@@ -72,38 +72,69 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <img src="imagens/iconeuser.png" alt="LOGO DO IFG"></a>
+
+                <a class="navbar-brand" href="PaginaInicial.html">
+                    <img src="imagens/iconeuser.png" alt="LOGO DO IFG" height="40">
+                </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="texto-saudacao" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Olá, seja bem-vindo!
                             </a>
+
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="cadastrar.html">Realizar Cadastro</a></li>
+                                <li id="menu-cadastro">
+                                    <a class="dropdown-item" href="cadastrar.html">Realizar cadastro</a>
+                                </li>
+
+                                <li id="menu-login">
+                                    <a class="dropdown-item" href="login.html">Realizar login</a>
+                                </li>
+
+                                <li id="menu-contato">
+                                    <a class="dropdown-item" href="contato.html">Entrar em contato</a>
+                                </li>
+
+                                <li id="menu-dados" class="d-none">
+                                    <a class="dropdown-item" href="meus_dados.html">Meus dados</a>
+                                </li>
+
+                                <li id="menu-enderecos" class="d-none">
+                                    <a class="dropdown-item" href="meus_enderecos.html">Meus endereços</a>
+                                </li>
 
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="PaginaInicial.html">Ir para a página inicial</a></li>
+
+                                <li id="menu-logout" class="d-none">
+                                    <a class="dropdown-item text-danger" href="#" onclick="fazerLogout()">
+                                        Sair
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-                    </ul>
-                    <img src="imagens/logoifgpng.png" alt="Logo">
 
+                    </ul>
                 </div>
+
             </div>
         </nav>
     </header>
+
     <main class="d-flex justify-content-center align-items-start mt-5">
 
-       
+
 
         <div class="card mb-3" style="max-width: 1000px;">
             <div class="row g-0">
@@ -114,28 +145,27 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">Realizar Login</h5>
-                        <form action="produtos.html">
-
+                        <form id="form-login" onsubmit="realizarLogin(event)">
 
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
-                                    required>
-                                <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém.
+                                <label class="form-label">Email</label>
+                                <input type="email" id="email" class="form-control" required>
+                                <div class="form-text">
+                                    Nunca compartilharemos seu e-mail com ninguém.
                                 </div>
                             </div>
 
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Senha</label>
-                                <input type="password" class="form-control" id="senha">
+                                <label class="form-label">Senha</label>
+                                <input type="password" id="senha" class="form-control" required>
                             </div>
 
-                            
+                            <div id="alerta" class="alert alert-danger d-none"></div>
 
-                                <center>
-                                    <input type="submit" value="Entrar">
-                                    <!-- Envia o formulário para a página de sucesso -->
-                                </center>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary w-100">
+                                    Entrar
+                                </button>
                             </div>
 
                         </form>

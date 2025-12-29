@@ -28,43 +28,69 @@
         crossorigin="anonymous"></script>
 
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <img src="imagens/iconeuser.png" alt="LOGO DO IFG"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Olá, seja bem-vindo!
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="meus_pedidos.html">Meus Pedidos</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="PaginaInicial.html">Sair</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <a class="navbar-brand position-relative" href="carrinho.html" style="text-decoration: none;">
-                        <img src="imagens/symbole-charrette-noire.png" alt="Carrinho">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
 
-                        <span id="badge-carrinho"
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                            style="font-size: 0.7rem;">
-                            0
-                        </span>
-                    </a>
-                </div>
+            <a class="navbar-brand" href="PaginaInicial.html">
+                <img src="imagens/iconeuser.png" alt="LOGO" height="40">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="texto-saudacao" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Olá, seja bem-vindo!
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li id="menu-cadastro">
+                                <a class="dropdown-item" href="cadastrar.html">Realizar cadastro</a>
+                            </li>
+                            <li id="menu-login">
+                                <a class="dropdown-item" href="login.html">Realizar login</a>
+                            </li>
+
+                            <li id="menu-produtos" class="d-none">
+                                <a class="dropdown-item fw-bold" href="produtos.html">Voltar para a Loja</a>
+                            </li>
+
+                            <li id="menu-dados" class="d-none">
+                                <a class="dropdown-item" href="dados_pessoais.html">Meus dados</a>
+                            </li>
+
+                            <li id="menu-pedidos" class="d-none">
+                                <a class="dropdown-item" href="pedidos.html">Meus pedidos</a>
+                            </li>
+
+                            <li id="menu-contato">
+                                <a class="dropdown-item" href="contato.html">Entrar em contato</a>
+                            </li>
+
+                            <li class="divider-logado d-none">
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <li id="menu-logout" class="d-none">
+                                <a class="dropdown-item text-danger" href="#" onclick="fazerLogout()">
+                                    Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
 
 
@@ -83,34 +109,27 @@
         </div>
         <div class="col">
             <div class="card border-0">
-
                 <div class="card-body">
-
-                    <div class="text-start">
+                    <form id="form-dados-pessoais">
                         <div class="row g-4">
                             <div class="col-md-6">
-                                <p class="fw-semibold mb-0">Nome:</p>
-                                <p class="fw-normal mb-4">Fulano Beltrano</p>
+                                <label class="fw-semibold mb-1">Nome Completo:</label>
+                                <input type="text" class="form-control mb-3" id="dp-nome" required>
 
-                                <p class="fw-semibold mb-0">Email:</p>
-                                <p class="fw-normal mb-4">meuemail@email.com</p>
+                                <label class="fw-semibold mb-1">Email:</label>
+                                <input type="email" class="form-control mb-3" id="dp-email" required>
 
-                                <p class="fw-semibold mb-0">CPF:</p>
-                                <p class="fw-normal">000.000.000-00</p>
+                               
                             </div>
 
                             <div class="col-md-6">
-                                <p class="fw-semibold mb-0">Data de Nascimento:</p>
-                                <p class="fw-normal mb-4">01/01/2001</p>
-
-                                <p class="fw-semibold mb-0">Telefone:</p>
-                                <p class="fw-normal mb-4">(61) 99999-9999</p>
-
-                                <a href="#" class="btn btn-gradiente text-end mt-4">Alterar meus dados</a>
+                                s
+                                <button type="submit" class="btn btn-gradiente w-100 mt-4">
+                                    Alterar meus dados
+                                </button>
                             </div>
-
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

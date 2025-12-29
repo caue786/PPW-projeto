@@ -28,43 +28,72 @@
         crossorigin="anonymous"></script>
 
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <img src="imagens/iconeuser.png" alt="LOGO DO IFG"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Olá, seja bem-vindo!
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="meus_pedidos.html">Meus Pedidos</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="PaginaInicial.html">Sair</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <a class="navbar-brand position-relative" href="carrinho.html" style="text-decoration: none;">
-                        <img src="imagens/symbole-charrette-noire.png" alt="Carrinho">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
 
-                        <span id="badge-carrinho"
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                            style="font-size: 0.7rem;">
-                            0
-                        </span>
-                    </a>
-                </div>
+            <a class="navbar-brand" href="PaginaInicial.html">
+                <img src="imagens/iconeuser.png" alt="LOGO DO IFG" height="40">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                           href="#"
+                           id="texto-saudacao"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Olá, seja bem-vindo!
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li id="menu-cadastro">
+                                <a class="dropdown-item" href="cadastrar.html">Realizar cadastro</a>
+                            </li>
+
+                            <li id="menu-login">
+                                <a class="dropdown-item" href="login.html">Realizar login</a>
+                            </li>
+
+                            <li id="menu-contato">
+                                <a class="dropdown-item" href="contato.html">Entrar em contato</a>
+                            </li>
+
+                            <li id="menu-dados" class="d-none">
+                                <a class="dropdown-item" href="meus_dados.html">Meus dados</a>
+                            </li>
+
+                            <li id="menu-enderecos" class="d-none">
+                                <a class="dropdown-item" href="meus_enderecos.html">Meus endereços</a>
+                            </li>
+
+                            <li><hr class="dropdown-divider"></li>
+
+                            <li id="menu-logout" class="d-none">
+                                <a class="dropdown-item text-danger"
+                                   href="#"
+                                   onclick="fazerLogout()">
+                                   Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
             </div>
-        </nav>
-    </header>
+
+        </div>
+    </nav>
+</header>
+
 
 
 
@@ -84,8 +113,8 @@
             <div class="card border-0">
                 <div class="card-body">
                     <p class="fw-semibold mb-0">Nome:</p>
-                    <p class="fw-normal mb-4">Fulano Beltrano</p>
-                    <p class="fw-semibold mb-0">Email:</p>
+                    <p id="nome-usuario"></p>
+                    <p id="email-usuario"></p>
                     <p class="fw-normal mb-4">meuemail@email.com</p>
                     <p class="fw-normal text-muted"> . . .</p>
                 </div>

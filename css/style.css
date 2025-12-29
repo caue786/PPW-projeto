@@ -1,3 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
 /*Tamanho das imagens da pagina de produtos*/
 /*img{
     width: 200px;

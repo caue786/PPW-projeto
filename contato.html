@@ -68,37 +68,71 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <img src="imagens/iconeuser.png" alt="LOGO DO IFG"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Olá, seja bem-vindo!
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="produtos.html">Ir para pagina de produtos</a></li>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
 
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="PaginaInicial.html">Sair</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <img src="imagens/logoifgpng.png" alt="Logo">
+            <a class="navbar-brand" href="PaginaInicial.html">
+                <img src="imagens/iconeuser.png" alt="LOGO DO IFG" height="40">
+            </a>
 
-                </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                           href="#"
+                           id="texto-saudacao"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Olá, seja bem-vindo!
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li id="menu-cadastro">
+                                <a class="dropdown-item" href="cadastrar.html">Realizar cadastro</a>
+                            </li>
+
+                            <li id="menu-login">
+                                <a class="dropdown-item" href="login.html">Realizar login</a>
+                            </li>
+
+                            <li id="menu-contato">
+                                <a class="dropdown-item" href="contato.html">Entrar em contato</a>
+                            </li>
+
+                            <li id="menu-dados" class="d-none">
+                                <a class="dropdown-item" href="meus_dados.html">Meus dados</a>
+                            </li>
+
+                            <li id="menu-enderecos" class="d-none">
+                                <a class="dropdown-item" href="meus_enderecos.html">Meus endereços</a>
+                            </li>
+
+                            <li><hr class="dropdown-divider"></li>
+
+                            <li id="menu-logout" class="d-none">
+                                <a class="dropdown-item text-danger"
+                                   href="#"
+                                   onclick="fazerLogout()">
+                                   Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
             </div>
-        </nav>
-    </header>
+
+        </div>
+    </nav>
+</header>
     <main class="d-flex justify-content-center align-items-start mt-5">
        
             <div class="card mb-3" style="max-width: 600px;">

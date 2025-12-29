@@ -34,53 +34,56 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="PaginaInicial.html"> 
+                <img src="imagens/iconeuser.png" alt="LOGO DO IFG">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="texto-saudacao" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Olá, seja bem-vindo!
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li id="menu-cadastro"><a class="dropdown-item" href="cadastrar.html">Realizar Cadastro</a></li>
+                            <li id="menu-login"><a class="dropdown-item" href="login.html">Realizar Login</a></li>
+                            
+                            <li id="menu-dados" class="d-none"><a class="dropdown-item" href="meus_dados.html">Meus dados</a></li>
+                            <li id="menu-pedidos" class="d-none"><a class="dropdown-item" href="meus_pedidos.html">Meus pedidos</a></li>
+                            <li id="menu-contato"><a class="dropdown-item" href="contato.html">Entrar em contato</a></li>
+                            
+                            <li class="divider-logado d-none">
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li id="menu-logout" class="d-none">
+                                <a class="dropdown-item text-danger" href="#" onclick="fazerLogout()">Sair</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <a class="navbar-brand position-relative" href="carrinho.html" style="text-decoration: none;">
+                    <img src="imagens/symbole-charrette-noire.png" alt="Carrinho">
+                    <span id="badge-carrinho" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.7rem;">
+                        0
+                    </span>
+                </a>
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <img src="imagens/iconeuser.png" alt="LOGO DO IFG"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Olá, seja bem-vindo!
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="cadastrar.html">Realizar Cadastro</a></li>
-                                <li><a class="dropdown-item" href="meus_dados.html">Meus dados</a></li>
-                                <li><a class="dropdown-item" href="meus_pedidos.html">Meus pedidos</a></li>
-                                <li><a class="dropdown-item" href="contato.html">Entrar em contato</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="PaginaInicial.html">Sair</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <a class="navbar-brand position-relative" href="carrinho.html" style="text-decoration: none;">
-                        <img src="imagens/symbole-charrette-noire.png" alt="Carrinho">
-
-                        <span id="badge-carrinho"
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                            style="font-size: 0.7rem;">
-                            0
-                        </span>
-                    </a>
-
-                    <form class="d-flex" role="search" id="form-busca">
-                        <input class="form-control me-2" type="search" id="input-busca" placeholder="Buscar produto.."
-                            aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
-                </div>
+                <form class="d-flex" role="search" id="form-busca">
+                    <input class="form-control me-2" type="search" id="input-busca" placeholder="Buscar produto.." aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
     <div id="carouselExampleInterval" class="carousel slide mb-4" data-bs-ride="carousel">
         <div class="carousel-inner">
