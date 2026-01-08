@@ -594,15 +594,7 @@ function carregarDadosPessoais() {
     if (campoNome) campoNome.value = user.nome || '';
     if (campoEmail) campoEmail.value = user.email || '';
 
-    // Seleciona os campos de exibição de texto
-    const campoCpf = document.getElementById('dp-cpf');
-    const campoNasc = document.getElementById('dp-nascimento');
-    const campoTel = document.getElementById('dp-telefone');
-
-    // Insere os dados ou mensagens padrão se estiverem vazios
-    if (campoCpf) campoCpf.innerText = user.cpf || 'Não informado';
-    if (campoNasc) campoNasc.innerText = user.dataNascimento || '---';
-    if (campoTel) campoTel.innerText = user.telefone || '---';
+    
 }
 
 // Limpa a sessão e desloga o usuário
@@ -641,7 +633,8 @@ function atualizarHeaderDinamico() {
         if (saudacao) saudacao.innerText = `Olá, ${usuario.nome.split(' ')[0]}!`;
 
         // Esconde os links de login/cadastro usando a classe Bootstrap 'd-none'
-        itensDeslogado.forEach(el => el?.classList.add('d-none'));
+        itensDeslogado.forEach(el => el?.classList.add('d-none'));//Para cada item do array itensDeslogado, 
+        // se o elemento existir, adicione a classe d-none para escondê-lo.”
 
         // Mostra as opções exclusivas de quem está logado
         itensLogado.forEach(el => el?.classList.remove('d-none'));
